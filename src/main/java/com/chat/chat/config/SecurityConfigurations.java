@@ -30,7 +30,7 @@ public class SecurityConfigurations {
                 .csrf(csrf -> csrf.disable())
                 .cors(httpSecurityCorsConfigurer -> httpSecurityCorsConfigurer.configurationSource(corsConfigurationSource()))
                         .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)).authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers(HttpMethod.POST, "/*").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/user/register").permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class).build();

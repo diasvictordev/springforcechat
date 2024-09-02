@@ -16,8 +16,7 @@ import java.util.Date;
 @Service
 public class TokenService {
 
-    @Value("${api.security.token.secret}")
-    private String secret;
+    public static String secret = "chave-chat";
 
     public String generateToken(User user) {
         try{
